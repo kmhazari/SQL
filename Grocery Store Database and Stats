@@ -1,0 +1,28 @@
+--Create a grocery store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, aisle INTEGER, category TEXT);
+
+INSERT INTO store VALUES (1, "Nibs", 1.50, 2, "Candy"),
+INSERT INTO store VALUES (2, "Bounty", 2.99, 1, "Candy Bar"),
+INSERT INTO store VALUES (3, "Lolly Pops", 1.00, 1, "Candy"),
+INSERT INTO store VALUES (4, "Ice Cream", 3.50, 3, "Frozen"),
+INSERT INTO store VALUES (5, "Mars", 2.75, 1, "Candy Bar"),
+INSERT INTO store VALUES (6, "Gelato", 3.25, 5, "Frozen"),
+INSERT INTO store VALUES (7, "Gum", 1.00, 1, "Candy"),
+INSERT INTO store VALUES (8, "Snickers", 2.25, 3, "Candy Bar"),
+INSERT INTO store VALUES (9, "Candy Popcorn", 4.99, 4, "Other"),
+INSERT INTO store VALUES (10, "M&M's", 5.00, 3, "Candy"),
+INSERT INTO store VALUES (11, "Popsicle", 2.50, 1, "Frozen"),
+INSERT INTO store VALUES (12, "Skor", 3.75, 4, "Candy Bar"),
+INSERT INTO store VALUES (13, "Jolly Rancher", 1.75, 1, "Candy"),
+INSERT INTO store VALUES (14, "Ice Cream Sandwich", 3.00, 3, "Frozen"),
+INSERT INTO store VALUES (15, "Candy Apples", 4.50, 4, "Other");
+
+--display the database ordered by price.
+SELECT * FROM store
+ORDER BY price desc;
+
+--how many categores of items in the store?
+SELECT category, COUNT(*) 
+FROM store
+GROUP BY category;
