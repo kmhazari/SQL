@@ -82,3 +82,10 @@ FROM fortune_companies;
 --What is the average number of weeks maternity leave each company offers?
 SELECT ROUND (AVG(maternity_leave_weeks),0)
 FROM fortune_companies
+
+--Which company has the best benefits?
+SELECT company_name
+FROM fortune_companies
+WHERE healthcare_benefits=1
+AND paid_time_off_days>20
+AND maternity_leave_weeks>15;
