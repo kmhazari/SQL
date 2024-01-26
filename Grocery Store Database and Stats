@@ -27,11 +27,24 @@ VALUES
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
---display the database ordered by price
-SELECT * 
-FROM superstore
-ORDER BY price desc;
 
---what is the most expensive item in the store?
-SELECT MAX(price), item_name
-FROM superstore;
+--This query orders items by price
+SELECT *
+FROM superstore
+ORDER BY price DESC;
+
+--This query shows the average rating of each item
+SELECT MAX(average_rating), item_name
+FROM superstore
+GROUP BY item_name;
+
+--This query shows the average price of items in the Kitchen Supplies category
+SELECT AVG(price), category
+FROM superstore
+WHERE category="Kitchen Supplies";
+
+--This query shows the items that have stock less than 20 units
+SELECT MIN(stock_quantity), item_name
+FROM superstore
+WHERE stock_quantity<20
+GROUP BY item_name;
